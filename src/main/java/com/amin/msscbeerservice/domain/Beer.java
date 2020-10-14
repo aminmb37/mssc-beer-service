@@ -24,7 +24,7 @@ public class Beer {
     private UUID id;
 
     @Version
-    private Long version;
+    private Integer version;
 
     @CreationTimestamp
     @Column(updatable = false)
@@ -36,7 +36,7 @@ public class Beer {
     private String beerStyle;
 
     @Column(unique = true)
-    private Long upc;
+    private String upc;
 
     private BigDecimal price;
 
