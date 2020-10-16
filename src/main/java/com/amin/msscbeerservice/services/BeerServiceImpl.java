@@ -23,7 +23,8 @@ public class BeerServiceImpl implements BeerService {
     private final BeerRepository beerRepository;
 
     @Override
-    public BeerPagedList listBeers(String beerName, String beerStyle, PageRequest pageRequest) {
+    public BeerPagedList listBeers(String beerName, String beerStyle,
+                                   Boolean showInventoryOnHand, PageRequest pageRequest) {
         Page<Beer> beerPage;
         if (StringUtils.isEmpty(beerName) && StringUtils.isEmpty(beerStyle)) {
             beerPage = beerRepository.findAll(pageRequest);
@@ -34,15 +35,28 @@ public class BeerServiceImpl implements BeerService {
         } else {
             beerPage = beerRepository.findAllByBeerNameAndBeerStyle(beerName, beerStyle, pageRequest);
         }
-        return new BeerPagedList(beerPage.getContent().stream()
-                .map(beerMapper::fromBeerToBeerDto).collect(Collectors.toList()),
-                PageRequest.of(beerPage.getPageable().getPageNumber(), beerPage.getPageable().getPageSize()),
-                beerPage.getTotalElements());
+        if (showInventoryOnHand) {
+            return new BeerPagedList(beerPage.getContent().stream()
+                    .map(beerMapper::fromBeerToBeerDtoWithInventory).collect(Collectors.toList()),
+                    PageRequest.of(beerPage.getPageable().getPageNumber(), beerPage.getPageable().getPageSize()),
+                    beerPage.getTotalElements());
+        } else {
+            return new BeerPagedList(beerPage.getContent().stream()
+                    .map(beerMapper::fromBeerToBeerDto).collect(Collectors.toList()),
+                    PageRequest.of(beerPage.getPageable().getPageNumber(), beerPage.getPageable().getPageSize()),
+                    beerPage.getTotalElements());
+        }
     }
 
     @Override
-    public BeerDto getBeerById(UUID beerId) {
-        return beerMapper.fromBeerToBeerDto(beerRepository.findById(beerId).orElseThrow(EntityNotFoundException::new));
+    public BeerDto getBeerById(UUID beerId, Boolean showInventoryOnHand) {
+        if (showInventoryOnHand) {
+            return beerMapper.fromBeerToBeerDtoWithInventory(beerRepository
+                    .findById(beerId).orElseThrow(EntityNotFoundException::new));
+        } else {
+            return beerMapper.fromBeerToBeerDto(beerRepository
+                    .findById(beerId).orElseThrow(EntityNotFoundException::new));
+        }
     }
 
     @Override

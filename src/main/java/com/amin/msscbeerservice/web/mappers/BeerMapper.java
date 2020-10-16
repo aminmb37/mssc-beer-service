@@ -12,6 +12,9 @@ public interface BeerMapper {
     @Mapping(source = "quantityToBrew", target = "quantityOnHand")
     BeerDto fromBeerToBeerDto(Beer beer);
 
+    @Mapping(source = "quantityToBrew", target = "quantityOnHand")
+    BeerDto fromBeerToBeerDtoWithInventory(Beer beer);
+
     @Mapping(target = "minOnHand", ignore = true)
     @Mapping(source = "quantityOnHand", target = "quantityToBrew")
     Beer fromBeerDtoToBeer(BeerDto beerDto);
