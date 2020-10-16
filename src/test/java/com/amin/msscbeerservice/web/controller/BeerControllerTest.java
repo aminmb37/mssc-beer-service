@@ -2,6 +2,7 @@ package com.amin.msscbeerservice.web.controller;
 
 import com.amin.msscbeerservice.bootstrap.BeerLoader;
 import com.amin.msscbeerservice.services.BeerService;
+import com.amin.msscbeerservice.services.inventory.BeerInventoryService;
 import com.amin.msscbeerservice.web.model.BeerDto;
 import com.amin.msscbeerservice.web.model.BeerStyleEnum;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -46,6 +47,9 @@ class BeerControllerTest {
 
     @MockBean
     private BeerService beerService;
+
+    @MockBean
+    private BeerInventoryService beerInventoryService;
 
     @Test
     void getBeerById() throws Exception {
