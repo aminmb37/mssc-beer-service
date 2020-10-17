@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.*;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.UUID;
@@ -15,7 +16,9 @@ import java.util.UUID;
 @AllArgsConstructor
 @Data
 @Builder
-public class BeerDto {
+public class BeerDto implements Serializable {
+    private static final long serialVersionUID = -8206833975629641749L;
+
     @Null
     private UUID id;
 
