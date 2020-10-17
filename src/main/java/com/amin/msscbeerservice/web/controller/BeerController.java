@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api/v1/beer")
+@RequestMapping("/api/v1")
 @RequiredArgsConstructor
 public class BeerController {
     private static final Integer DEFAULT_PAGE_NUMBER = 0;
@@ -21,7 +21,7 @@ public class BeerController {
 
     private final BeerService beerService;
 
-    @GetMapping(produces = "application/json")
+    @GetMapping(path = "/beer", produces = "application/json")
     public ResponseEntity<BeerPagedList> listBeers(
             @RequestParam(value = "pageNumber", required = false) Integer pageNumber,
             @RequestParam(value = "pageSize", required = false) Integer pageSize,
@@ -42,7 +42,7 @@ public class BeerController {
         return new ResponseEntity<>(beerPagedList, HttpStatus.OK);
     }
 
-    @GetMapping("/{beerId}")
+    @GetMapping("/beer/{beerId}")
     public ResponseEntity<BeerDto> getBeerById(@PathVariable("beerId") UUID beerId,
                                                @RequestParam(value = "showInventoryOnHand", required = false)
                                                        Boolean showInventoryOnHand) {
@@ -52,12 +52,17 @@ public class BeerController {
         return new ResponseEntity<>(beerService.getBeerById(beerId, showInventoryOnHand), HttpStatus.OK);
     }
 
-    @PostMapping
+    @GetMapping("/beerUpc/{beerUpc}")
+    public ResponseEntity<BeerDto> getBeerByUpc(@PathVariable("beerUpc") String beerUpc) {
+        return new ResponseEntity<>(beerService.getBeerByUpc(beerUpc), HttpStatus.OK);
+    }
+
+    @PostMapping("/beer")
     public ResponseEntity<BeerDto> saveNewBeer(@Validated @RequestBody BeerDto beerDto) {
         return new ResponseEntity<>(beerService.saveNewBeer(beerDto), HttpStatus.CREATED);
     }
 
-    @PutMapping("/{beerId}")
+    @PutMapping("/beer/{beerId}")
     public ResponseEntity<BeerDto> updateBeerById(@PathVariable("beerId") UUID beerId,
                                                   @Validated @RequestBody BeerDto beerDto) {
         return new ResponseEntity<>(beerService.updateBeer(beerId, beerDto), HttpStatus.NO_CONTENT);
