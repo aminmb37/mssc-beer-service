@@ -4,11 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.github.sfg-beer-works</groupId>
-        <artifactId>sfg-brewery-bom</artifactId>
-        <version>1.0.22</version>
+        <groupId>com.github.aminmb37.beerworks</groupId>
+        <artifactId>mssc-brewery-bom</artifactId>
+        <version>1.2</version>
     </parent>
 
+    <groupId>com.amin.beerservice</groupId>
     <artifactId>mssc-beer-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>mssc-beer-service</name>
