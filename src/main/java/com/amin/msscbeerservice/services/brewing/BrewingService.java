@@ -1,4 +1,4 @@
-package com.amin.msscbeerservice.services;
+package com.amin.msscbeerservice.services.brewing;
 
 import com.amin.msscbeerservice.config.JmsConfig;
 import com.amin.msscbeerservice.domain.Beer;
