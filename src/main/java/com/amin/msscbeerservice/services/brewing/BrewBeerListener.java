@@ -1,9 +1,9 @@
 package com.amin.msscbeerservice.services.brewing;
 
+import com.amin.common.events.BrewBeerEvent;
+import com.amin.common.events.NewInventoryEvent;
 import com.amin.msscbeerservice.config.JmsConfig;
 import com.amin.msscbeerservice.domain.Beer;
-import com.amin.msscbeerservice.events.BrewBeerEvent;
-import com.amin.msscbeerservice.events.NewInventoryEvent;
 import com.amin.msscbeerservice.repositories.BeerRepository;
 import com.amin.msscbeerservice.web.model.BeerDto;
 import lombok.RequiredArgsConstructor;

@@ -1,4 +1,4 @@
-package com.amin.msscbeerservice.events;
+package com.amin.common.events;
 
 import com.amin.msscbeerservice.web.model.BeerDto;
 import lombok.NoArgsConstructor;

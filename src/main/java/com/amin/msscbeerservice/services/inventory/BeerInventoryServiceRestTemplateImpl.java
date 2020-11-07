@@ -16,7 +16,7 @@ import java.util.UUID;
 
 @Slf4j
 @Component
-@ConfigurationProperties(prefix = "sfg.brewery", ignoreUnknownFields = false)
+@ConfigurationProperties(prefix = "amin.brewery", ignoreUnknownFields = false)
 public class BeerInventoryServiceRestTemplateImpl implements BeerInventoryService {
     private final RestTemplate restTemplate;
     private String beerInventoryServiceHost;
