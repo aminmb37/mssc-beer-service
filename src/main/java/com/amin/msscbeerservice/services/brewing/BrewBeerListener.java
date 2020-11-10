@@ -1,11 +1,11 @@
 package com.amin.msscbeerservice.services.brewing;
 
-import com.amin.common.events.BrewBeerEvent;
-import com.amin.common.events.NewInventoryEvent;
+import com.amin.brewery.model.BeerDto;
+import com.amin.brewery.model.events.BrewBeerEvent;
+import com.amin.brewery.model.events.NewInventoryEvent;
 import com.amin.msscbeerservice.config.JmsConfig;
 import com.amin.msscbeerservice.domain.Beer;
 import com.amin.msscbeerservice.repositories.BeerRepository;
-import com.amin.msscbeerservice.web.model.BeerDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.jms.annotation.JmsListener;

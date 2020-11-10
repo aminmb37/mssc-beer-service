@@ -1,10 +1,10 @@
 package com.amin.msscbeerservice.web.controller;
 
+import com.amin.brewery.model.BeerDto;
+import com.amin.brewery.model.BeerStyleEnum;
 import com.amin.msscbeerservice.bootstrap.BeerLoader;
 import com.amin.msscbeerservice.services.BeerService;
 import com.amin.msscbeerservice.services.inventory.BeerInventoryService;
-import com.amin.msscbeerservice.web.model.BeerDto;
-import com.amin.msscbeerservice.web.model.BeerStyleEnum;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

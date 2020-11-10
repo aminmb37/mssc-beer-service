@@ -1,7 +1,7 @@
 package com.amin.msscbeerservice.services;
 
-import com.amin.msscbeerservice.web.model.BeerDto;
-import com.amin.msscbeerservice.web.model.BeerPagedList;
+import com.amin.brewery.model.BeerDto;
+import com.amin.brewery.model.BeerPagedList;
 import org.springframework.data.domain.PageRequest;
 
 import java.util.UUID;

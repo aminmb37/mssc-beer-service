@@ -1,8 +1,8 @@
 package com.amin.msscbeerservice.web.controller;
 
+import com.amin.brewery.model.BeerDto;
+import com.amin.brewery.model.BeerPagedList;
 import com.amin.msscbeerservice.services.BeerService;
-import com.amin.msscbeerservice.web.model.BeerDto;
-import com.amin.msscbeerservice.web.model.BeerPagedList;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;

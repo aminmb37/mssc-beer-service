@@ -1,4 +1,4 @@
-package com.amin.msscbeerservice.web.model;
+package com.amin.brewery.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;

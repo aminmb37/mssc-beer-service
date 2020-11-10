@@ -1,10 +1,10 @@
 package com.amin.msscbeerservice.services;
 
+import com.amin.brewery.model.BeerDto;
+import com.amin.brewery.model.BeerPagedList;
 import com.amin.msscbeerservice.domain.Beer;
 import com.amin.msscbeerservice.repositories.BeerRepository;
 import com.amin.msscbeerservice.web.mappers.BeerMapper;
-import com.amin.msscbeerservice.web.model.BeerDto;
-import com.amin.msscbeerservice.web.model.BeerPagedList;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
