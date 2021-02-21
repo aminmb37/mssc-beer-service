@@ -10,7 +10,7 @@
 
     <groupId>com.amin.beerservice</groupId>
     <artifactId>mssc-beer-service</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.1</version>
     <name>mssc-beer-service</name>
     <description>MSSC Beer Service</description>
 
@@ -104,4 +104,8 @@
             </plugin>
         </plugins>
     </build>
+
+  <scm>
+    <tag>mssc-beer-service-1.1</tag>
+  </scm>
 </project>
